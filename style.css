@@ -167,3 +167,26 @@ body {
 .contacts a {
   color: var(--text-dark);
 }
+.order-btn {
+  background-color: #d4a373;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  margin-top: 16px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.order-btn:hover {
+  background-color: #b88b60;
+  transform: translateY(-2px);
+}
+
+.order-btn:active {
+  transform: translateY(0);
+}
