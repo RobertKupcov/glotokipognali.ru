@@ -3,135 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ГЛОТОК — живая комбуча</title>
+
+  <!-- SEO -->
+  <title>Живая комбуча «ГЛОТОК»: натуральные вкусы без сахара | Екатеринбург</title>
+  <meta name="description" content="Натуральная комбуча «ГЛОТОК» с живыми пробиотиками. 7 уникальных вкусов: яблоко, мята-огурец, персик-розмарин и другие. Без добавленного сахара. Доставка по Екатеринбургу.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (превью в соцсетях и мессенджерах) -->
+  <meta property="og:title" content="Живая комбуча «ГЛОТОК»: натуральные вкусы без сахара">
+  <meta property="og:description" content="Комбуча с живыми пробиотиками, без сахара. 7 вкусов, доставка по Екатеринбургу.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://robertkupcov.github.io/glotokipognali.ru/">
+  <meta property="og:image" content="https://robertkupcov.github.io/glotokipognali.ru/img/apple.png">
+  <meta property="og:locale" content="ru_RU">
+
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* ===== HERO (первый экран) ===== */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-      background: linear-gradient(160deg, #3a2f26 0%, #2c2c2c 60%, #1f1f1f 100%);
-      color: #fff;
-    }
-
-    .hero-container {
-      max-width: 800px;
-      z-index: 2;
-    }
-
-    #hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      line-height: 1.15;
-    }
-
-    .hero-subtitle {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-      opacity: 0.9;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary, .btn-outline {
-      padding: 14px 30px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background-color: #d4a373;
-      color: #333;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 2px solid #fff;
-      color: #fff;
-    }
-
-    .btn-outline:hover {
-      background: #fff;
-      color: #333;
-    }
-
-    /* ===== О ПРОДУКТЕ ===== */
-    #about {
-      padding: 80px 20px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .about-card {
-      background: #f9f5f0;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    .about-card h3 {
-      margin-top: 0;
-      color: #d4a373;
-    }
-
-    .about-card p {
-      color: #555;
-      line-height: 1.6;
-    }
-
-    /* ===== ДОСТАВКА ===== */
-    #delivery {
-      background: #fdf3e7;
-      padding: 70px 0;
-    }
-
-    .delivery-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-    }
-
-    .delivery-item h4 {
-      color: #333;
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
-
-    .delivery-item p {
-      color: #666;
-      line-height: 1.6;
-    }
-
-    /* ===== МОДАЛЬНОЕ ОКНО ===== */
+    /* Базовые стили модального окна */
     .modal {
       display: none;
       position: fixed;
@@ -212,7 +101,6 @@
       background-color: #c29365;
     }
 
-    /* ===== КАРТОЧКИ ===== */
     .flavor-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       background: #fff;
@@ -223,7 +111,6 @@
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     }
 
-    /* ===== КНОПКА ЗАКАЗА ===== */
     .order-btn {
       margin-top: 16px;
       padding: 10px 20px;
@@ -242,37 +129,8 @@
       color: #333;
     }
 
-    /* ===== ПЛАВНЫЙ СКРОЛЛ ===== */
     html {
       scroll-behavior: smooth;
-    }
-
-    /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
-    @media (max-width: 768px) {
-      #hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .btn-primary, .btn-outline {
-        width: 100%;
-        text-align: center;
-        box-sizing: border-box;
-      }
-
-      .modal-content {
-        margin: 5% auto;
-        width: 95%;
-        padding: 20px;
-      }
-
-      .flavor-card:hover {
-        transform: none;
-        box-shadow: none;
-      }
     }
   </style>
 </head>
@@ -298,7 +156,7 @@
 
       <article class="flavor-card">
         <div class="flavor-image-wrapper">
-          <img src="img/apple.png" alt="Комбуча ГЛОТОК, вкус яблоко">
+          <img src="img/apple.png" alt="Комбуча ГЛОТОК вкус яблоко, натуральный напиток с пробиотиками">
         </div>
         <div class="flavor-info">
           <h3>Яблоко</h3>
@@ -315,7 +173,7 @@
 
       <article class="flavor-card">
         <div class="flavor-image-wrapper">
-          <img src="img/mint-cucumber.png" alt="Комбуча ГЛОТОК, вкус мята и огурец">
+          <img src="img/mint-cucumber.png" alt="Комбуча ГЛОТОК вкус мята и огурец, освежающий напиток без сахара">
         </div>
         <div class="flavor-info">
           <h3>Мята, Огурец</h3>
@@ -332,7 +190,7 @@
 
       <article class="flavor-card">
         <div class="flavor-image-wrapper">
-          <img src="img/peach-rosemary.png" alt="Комбуча ГЛОТОК, вкус персик и розмарин">
+          <img src="img/peach-rosemary.png" alt="Комбуча ГЛОТОК вкус персик и розмарин, тёплый фруктовый напиток">
         </div>
         <div class="flavor-info">
           <h3>Персик, Розмарин</h3>
@@ -349,7 +207,7 @@
 
       <article class="flavor-card">
         <div class="flavor-image-wrapper">
-          <img src="img/jiniper-pine.png" alt="Комбуча ГЛОТОК, вкус можжевельник, кедровый орех и розмарин">
+          <img src="img/jiniper-pine.png" alt="Комбуча ГЛОТОК вкус можжевельник, кедровый орех и розмарин">
         </div>
         <div class="flavor-info">
           <h3>Можжевельник, Кедровый орех, Розмарин</h3>
@@ -366,7 +224,7 @@
 
       <article class="flavor-card">
         <div class="flavor-image-wrapper">
-          <img src="img/cherry-thume.png" alt="Комбуча ГЛОТОК, вкус вишня и чабрец">
+          <img src="img/cherry-thume.png" alt="Комбуча ГЛОТОК вкус вишня и чабрец, ягодный напиток без сахара">
         </div>
         <div class="flavor-info">
           <h3>Вишня, Чабрец</h3>
@@ -383,7 +241,7 @@
 
       <article class="flavor-card">
         <div class="flavor-image-wrapper">
-          <img src="img/citrus.png" alt="Комбуча ГЛОТОК, вкус цитрус">
+          <img src="img/citrus.png" alt="Комбуча ГЛОТОК вкус цитрус, бодрящий напиток с пробиотиками">
         </div>
         <div class="flavor-info">
           <h3>Цитрус</h3>
@@ -400,7 +258,7 @@
 
       <article class="flavor-card">
         <div class="flavor-image-wrapper">
-          <img src="img/ginger-lemon.png" alt="Комбуча ГЛОТОК, вкус имбирь и лимон">
+          <img src="img/ginger-lemon.png" alt="Комбуча ГЛОТОК вкус имбирь и лимон, освежающий острый напиток">
         </div>
         <div class="flavor-info">
           <h3>Имбирь, Лимон</h3>
