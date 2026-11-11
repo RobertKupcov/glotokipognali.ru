@@ -104,4 +104,211 @@
     /* Кнопка заказа на карточке */
     .order-btn {
       margin-top: 16px;
-      padding:
+      padding: 10px 20px;
+      border: none;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      background-color: #333;
+      color: #fff;
+      transition: all 0.2s;
+    }
+
+    .order-btn:hover {
+      background-color: #d4a373;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="flavors">
+    <h2 class="section-title">Наши вкусы</h2>
+
+    <div class="flavors-grid">
+
+      <article class="flavor-card">
+        <div class="flavor-image-wrapper">
+          <img src="img/apple.png" alt="Комбуча ГЛОТОК, вкус яблоко">
+        </div>
+        <div class="flavor-info">
+          <h3>Яблоко</h3>
+          <p class="flavor-description">Классический освежающий вкус на основе зелёного чая и сочного яблока.</p>
+          <div class="flavor-features">
+            <div class="feature-item"><span>100% состав</span></div>
+            <div class="feature-item"><span>Пробиотики</span></div>
+            <div class="feature-item"><span>Без сахара</span></div>
+          </div>
+          <div class="volume-badge">0,5 л</div>
+          <button class="order-btn" onclick="openModal('Яблоко')">Заказать 0,5 л</button>
+        </div>
+      </article>
+
+      <article class="flavor-card">
+        <div class="flavor-image-wrapper">
+          <img src="img/mint-cucumber.png" alt="Комбуча ГЛОТОК, вкус мята и огурец">
+        </div>
+        <div class="flavor-info">
+          <h3>Мята, Огурец</h3>
+          <p class="flavor-description">Деликатный летний микс: прохлада огурца и свежесть мяты.</p>
+          <div class="flavor-features">
+            <div class="feature-item"><span>100% состав</span></div>
+            <div class="feature-item"><span>Пробиотики</span></div>
+            <div class="feature-item"><span>Без сахара</span></div>
+          </div>
+          <div class="volume-badge">0,5 л</div>
+          <button class="order-btn" onclick="openModal('Мята, Огурец')">Заказать 0,5 л</button>
+        </div>
+      </article>
+
+      <article class="flavor-card">
+        <div class="flavor-image-wrapper">
+          <img src="img/peach-rosemary.png" alt="Комбуча ГЛОТОК, вкус персик и розмарин">
+        </div>
+        <div class="flavor-info">
+          <h3>Персик, Розмарин</h3>
+          <p class="flavor-description">Тёплый южный вкус: сладость персика и пряная нота розмарина.</p>
+          <div class="flavor-features">
+            <div class="feature-item"><span>100% состав</span></div>
+            <div class="feature-item"><span>Пробиотики</span></div>
+            <div class="feature-item"><span>Без сахара</span></div>
+          </div>
+          <div class="volume-badge">0,5 л</div>
+          <button class="order-btn" onclick="openModal('Персик, Розмарин')">Заказать 0,5 л</button>
+        </div>
+      </article>
+
+      <article class="flavor-card">
+        <div class="flavor-image-wrapper">
+          <img src="img/jiniper-pine.png" alt="Комбуча ГЛОТОК, вкус можжевельник, кедровый орех и розмарин">
+        </div>
+        <div class="flavor-info">
+          <h3>Можжевельник, Кедровый орех, Розмарин</h3>
+          <p class="flavor-description">Лесной, глубокий вкус с хвойными и ореховыми оттенками.</p>
+          <div class="flavor-features">
+            <div class="feature-item"><span>100% состав</span></div>
+            <div class="feature-item"><span>Пробиотики</span></div>
+            <div class="feature-item"><span>Без сахара</span></div>
+          </div>
+          <div class="volume-badge">0,5 л</div>
+          <button class="order-btn" onclick="openModal('Можжевельник, Кедровый орех, Розмарин')">Заказать 0,5 л</button>
+        </div>
+      </article>
+
+      <article class="flavor-card">
+        <div class="flavor-image-wrapper">
+          <img src="img/cherry-thume.png" alt="Комбуча ГЛОТОК, вкус вишня и чабрец">
+        </div>
+        <div class="flavor-info">
+          <h3>Вишня, Чабрец</h3>
+          <p class="flavor-description">Насыщенный ягодный вкус с травяной глубиной чабреца.</p>
+          <div class="flavor-features">
+            <div class="feature-item"><span>100% состав</span></div>
+            <div class="feature-item"><span>Пробиотики</span></div>
+            <div class="feature-item"><span>Без сахара</span></div>
+          </div>
+          <div class="volume-badge">0,5 л</div>
+          <button class="order-btn" onclick="openModal('Вишня, Чабрец')">Заказать 0,5 л</button>
+        </div>
+      </article>
+
+      <article class="flavor-card">
+        <div class="flavor-image-wrapper">
+          <img src="img/citrus.png" alt="Комбуча ГЛОТОК, вкус цитрус">
+        </div>
+        <div class="flavor-info">
+          <h3>Цитрус</h3>
+          <p class="flavor-description">Яркий и бодрящий микс апельсина, лайма и цедры.</p>
+          <div class="flavor-features">
+            <div class="feature-item"><span>100% состав</span></div>
+            <div class="feature-item"><span>Пробиотики</span></div>
+            <div class="feature-item"><span>Без сахара</span></div>
+          </div>
+          <div class="volume-badge">0,5 л</div>
+          <button class="order-btn" onclick="openModal('Цитрус')">Заказать 0,5 л</button>
+        </div>
+      </article>
+
+      <article class="flavor-card">
+        <div class="flavor-image-wrapper">
+          <img src="img/ginger-lemon.png" alt="Комбуча ГЛОТОК, вкус имбирь и лимон">
+        </div>
+        <div class="flavor-info">
+          <h3>Имбирь, Лимон</h3>
+          <p class="flavor-description">Острая свежесть имбиря и цитрусовая кислинка лимона.</p>
+          <div class="flavor-features">
+            <div class="feature-item"><span>100% состав</span></div>
+            <div class="feature-item"><span>Пробиотики</span></div>
+            <div class="feature-item"><span>Без сахара</span></div>
+          </div>
+          <div class="volume-badge">0,5 л</div>
+          <button class="order-btn" onclick="openModal('Имбирь, Лимон')">Заказать 0,5 л</button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer id="contacts" class="site-footer">
+    <div class="container">
+      <h3>ГЛОТОК — живая комбуча</h3>
+      <p>Натуральные напитки с пробиотиками. Без добавленного сахара.</p>
+      <div class="footer-links">
+        <a href="tel:+79120502708">+7 (912) 050-27-08</a>
+        <a href="mailto:glotokipognali@mail.ru">glotokipognali@mail.ru</a>
+        <a href="https://t.me/Robert_Kupcov" target="_blank">Telegram</a>
+      </div>
+      <p class="copyright">© 2024 ГЛОТОК. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <h2>Оформить заказ</h2>
+      <p id="modalFlavor">Комбуча «ГЛОТОК», 0,5 л</p>
+      <form action="https://formspree.io/f/mppdajlw" method="POST">
+        <input type="hidden" name="flavor" id="flavorInput" value="">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <button type="submit" class="order-btn">Отправить заказ</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal(flavor) {
+      const modal = document.getElementById('orderModal');
+      const content = document.querySelector('.modal-content');
+      
+      modal.style.display = 'block';
+      
+      setTimeout(() => {
+        content.classList.add('active');
+        document.getElementById('modalFlavor').textContent = 'Комбуча «ГЛОТОК», вкус: ' + flavor + ', 0,5 л';
+        document.getElementById('flavorInput').value = flavor;
+      }, 10);
+    }
+
+    function closeModal() {
+      const content = document.querySelector('.modal-content');
+      const modal = document.getElementById('orderModal');
+      
+      content.classList.remove('active');
+      
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 300);
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('orderModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+</body>
+</html>
