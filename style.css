@@ -1,181 +1,174 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f6f1;
-  color: #333;
+/* --- БАЗОВЫЕ НАСТРОЙКИ --- */
+:root {
+  --primary-bg: #FFF8F0; /* Бежевый фон */
+  --text-dark: #1A1A1A;
+  --btn-orange: #FF8C00;
+  --btn-hover: #E67E00;
 }
 
-/* Главный экран */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
 .hero {
   text-align: center;
   padding: 100px 20px;
-  background: linear-gradient(160deg, #f9e7d0, #f9f6f1);
 }
 
 .hero h1 {
-  margin: 0;
-  font-size: 3rem;
+  font-size: 48px;
+  margin: 0 0 15px 0;
   letter-spacing: 2px;
-  color: #222;
 }
 
-.hero .dot {
-  color: #e8722a;
+.hero p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
 }
 
-.hero .tagline {
-  font-size: 1.2rem;
-  color: #666;
-  margin: 15px 0 25px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 28px;
-  background-color: #e8722a;
+.btn-primary {
+  background-color: var(--btn-orange);
   color: white;
+  padding: 15px 30px;
   text-decoration: none;
-  border-radius: 30px;
+  border-radius: 50px;
   font-weight: bold;
+  display: inline-block;
   transition: background 0.3s;
 }
 
-.btn:hover {
-  background-color: #c25a1c;
+.btn-primary:hover {
+  background-color: var(--btn-hover);
 }
 
-/* Галерея вкусов */
-.tastes-gallery {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.tastes-gallery h2 {
+/* --- СЕКЦИЯ ВКУСОВ --- */
+.section-title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 32px;
   margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.flavors-grid {
+  display: grid;
+  /* Адаптивная сетка: авто-заполнение, мин. ширина карточки 280px */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  padding: 0 20px;
+}
+
+/* --- КАРТОЧКА ВКУСА --- */
+.flavor-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column; /* По умолчанию на мобильных и для надежности */
+}
+
+/* Блок с картинкой */
+.flavor-image-wrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.flavor-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Картинка заполняет блок, не искажаясь */
+}
+
+/* Блок с информацией */
+.flavor-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.flavor-info h3 {
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  color: var(--text-dark);
+}
+
+.flavor-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Сетка характеристик (капля, лист, сердце) */
+.flavor-features {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: #444;
+}
+
+.feature-item svg {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 5px;
+  fill: var(--btn-orange);
+}
+
+.volume-badge {
+  background: #F5F5F5;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
   color: #333;
 }
 
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.taste-card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
-}
-
-.taste-card:hover {
-  transform: translateY(-5px);
-}
-
-.taste-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-.card-info {
-  padding: 20px;
-  text-align: center;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card-info h3 {
-  margin: 0 0 15px 0;
-  color: #222;
-  font-size: 1.4rem;
-}
-
-.card-info p {
-  color: #666;
-  line-height: 1.5;
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-.volume {
-  color: #888;
-  font-weight: 600;
-  font-size: 0.9rem;
-  background: #f5f0e8;
-  padding: 4px 10px;
-  border-radius: 20px;
-  align-self: center;
-}
-
-/* О продукте */
-.about {
-  padding: 60px 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.about h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.about p {
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.7;
-}
-
-/* Контакты */
-.contacts {
-  background: #2f3a2f;
-  color: #fff;
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.contacts h2 {
-  margin-top: 0;
-}
-
-.contacts ul {
-  list-style: none;
-  padding: 0;
-  max-width: 400px;
-  margin: 20px auto;
-}
-
-.contacts li {
-  margin-bottom: 10px;
-}
-
-.contacts a {
-  color: #f9e7d0;
-  text-decoration: none;
-}
-
-.contacts a:hover {
-  text-decoration: underline;
-}
-
-/* Адаптив */
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2.2rem;
+/* --- АДАПТИВНОСТЬ (САМОЕ ВАЖНОЕ ДЛЯ ТЕБЯ) --- */
+@media (min-width: 769px) {
+  /* На ПК и больших планшетах: картинка и текст в ряд */
+  .flavor-card {
+    flex-direction: row;
+    align-items: center;
   }
-  .tastes-gallery h2 {
-    font-size: 1.8rem;
+
+  .flavor-image-wrapper {
+    width: 40%; /* Картинка занимает 40% ширины */
+    height: auto;
+    min-height: 300px;
+  }
+
+  .flavor-info {
+    width: 60%;
+    text-align: left;
+    padding: 30px;
+  }
+  
+  .flavor-features {
+    justify-content: flex-start;
+    gap: 20px;
+  }
+}
+
+/* Дополнительные улучшения для очень больших экранов */
+@media (min-width: 1200px) {
+  .flavors-grid {
+    padding: 0 40px;
   }
 }
