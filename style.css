@@ -1,0 +1,181 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f6f1;
+  color: #333;
+}
+
+/* Главный экран */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(160deg, #f9e7d0, #f9f6f1);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  color: #222;
+}
+
+.hero .dot {
+  color: #e8722a;
+}
+
+.hero .tagline {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 15px 0 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #e8722a;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #c25a1c;
+}
+
+/* Галерея вкусов */
+.tastes-gallery {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tastes-gallery h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.taste-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.taste-card:hover {
+  transform: translateY(-5px);
+}
+
+.taste-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.card-info {
+  padding: 20px;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-info h3 {
+  margin: 0 0 15px 0;
+  color: #222;
+  font-size: 1.4rem;
+}
+
+.card-info p {
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.volume {
+  color: #888;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: #f5f0e8;
+  padding: 4px 10px;
+  border-radius: 20px;
+  align-self: center;
+}
+
+/* О продукте */
+.about {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Контакты */
+.contacts {
+  background: #2f3a2f;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contacts h2 {
+  margin-top: 0;
+}
+
+.contacts ul {
+  list-style: none;
+  padding: 0;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.contacts li {
+  margin-bottom: 10px;
+}
+
+.contacts a {
+  color: #f9e7d0;
+  text-decoration: none;
+}
+
+.contacts a:hover {
+  text-decoration: underline;
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .tastes-gallery h2 {
+    font-size: 1.8rem;
+  }
+}
