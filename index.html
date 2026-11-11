@@ -1,75 +1,47 @@
-<section>
-  <h2 class="section-title">Наши вкусы</h2>
-  <div class="flavors-grid">
-    
-    <!-- ВКУС 1: Яблоко -->
-    <article class="flavor-card">
-      <div class="flavor-image-wrapper">
-        <!-- Путь: папка img + имя файла. Проверь, чтобы имя файла точно совпадало! -->
-        <img src="img/apple.jpg" alt="Комбуча Яблоко" onerror="this.src='https://via.placeholder.com/400x300?text=Нет+фото'">
-      </div>
-      <div class="flavor-info">
-        <h3>Яблоко</h3>
-        <p class="flavor-description">Классический освежающий вкус на основе зелёного чая и сочного яблока.</p>
-        <div class="flavor-features">
-          <div class="feature-item"><span>100% состав</span></div>
-          <div class="feature-item"><span>Пробиотики</span></div>
-          <div class="feature-item"><span>Без сахара</span></div>
-        </div>
-        <div class="volume-badge">0,5 л</div>
-      </div>
-    </article>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ГЛОТОК — живая комбуча</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <!-- ВКУС 2: Мята, Огурец -->
-    <article class="flavor-card">
-      <div class="flavor-image-wrapper">
-        <img src="img/mint-cucumber.jpg" alt="Комбуча Мята, Огурец" onerror="this.src='https://via.placeholder.com/400x300?text=Нет+фото'">
-      </div>
-      <div class="flavor-info">
-        <h3>Мята, Огурец</h3>
-        <p class="flavor-description">Деликатный летний микс: прохлада огурца и свежесть мяты.</p>
-        <div class="flavor-features">
-          <div class="feature-item"><span>100% состав</span></div>
-          <div class="feature-item"><span>Пробиотики</span></div>
-          <div class="feature-item"><span>Без сахара</span></div>
-        </div>
-        <div class="volume-badge">0,5 л</div>
-      </div>
-    </article>
+  <header class="hero">
+    <h1>ГЛОТОК<span class="dot">.</span></h1>
+    <p class="tagline">Живая комбуча — вкус и свежесть в каждом глотке</p>
+    <a href="#flavors" class="btn-primary">Смотреть вкусы</a>
+  </header>
 
-    <!-- ВКУС 3: Персик, Розмарин -->
-    <article class="flavor-card">
-      <div class="flavor-image-wrapper">
-        <img src="img/peach-rosemary.jpg" alt="Комбуча Персик, Розмарин" onerror="this.src='https://via.placeholder.com/400x300?text=Нет+фото'">
-      </div>
-      <div class="flavor-info">
-        <h3>Персик, Розмарин</h3>
-        <p class="flavor-description">Тёплый южный вкус: сладость персика и пряная нота розмарина.</p>
-        <div class="flavor-features">
-          <div class="feature-item"><span>100% состав</span></div>
-          <div class="feature-item"><span>Пробиотики</span></div>
-          <div class="feature-item"><span>Без сахара</span></div>
-        </div>
-        <div class="volume-badge">0,5 л</div>
-      </div>
-    </article>
+  <section id="flavors">
+    <h2 class="section-title">Наши вкусы</h2>
+    <div class="flavors-grid">
 
-    <!-- ВКУС 4: Можжевельник, Кедр -->
-    <article class="flavor-card">
-      <div class="flavor-image-wrapper">
-        <img src="img/juniper-cedar.jpg" alt="Комбуча Можжевельник, Кедр" onerror="this.src='https://via.placeholder.com/400x300?text=Нет+фото'">
-      </div>
-      <div class="flavor-info">
-        <h3>Можжевельник, Кедр, Розмарин</h3>
-        <p class="flavor-description">Лесной, глубокий вкус с хвойными и ореховыми оттенками.</p>
-        <div class="flavor-features">
-          <div class="feature-item"><span>100% состав</span></div>
-          <div class="feature-item"><span>Пробиотики</span></div>
-          <div class="feature-item"><span>Без сахара</span></div>
+      <article class="flavor-card">
+        <div class="flavor-image-wrapper">
+          <img src="img/apple.jpg" alt="Комбуча ГЛОТОК, вкус яблоко, бутылка 0,5 л">
         </div>
-        <div class="volume-badge">0,5 л</div>
-      </div>
-    </article>
+        <div class="flavor-info">
+          <h3>Яблоко</h3>
+          <p class="flavor-description">Классический освежающий вкус на основе зелёного чая и сочного яблока.</p>
+          <div class="flavor-features">
+            <div class="feature-item"><span>100% состав</span></div>
+            <div class="feature-item"><span>Пробиотики</span></div>
+            <div class="feature-item"><span>Без сахара</span></div>
+          </div>
+          <div class="volume-badge">0,5 л</div>
+        </div>
+      </article>
 
-  </div>
-</section>
+      <article class="flavor-card">
+        <div class="flavor-image-wrapper">
+          <img src="img/mint-cucumber.jpg" alt="Комбуча ГЛОТОК, вкус мята и огурец, бутылка 0,5 л">
+        </div>
+        <div class="flavor-info">
+          <h3>Мята, Огурец</h3>
+          <p class="flavor-description">Деликатный летний микс: прохлада огурца и свежесть мяты.</p>
+          <div class="flavor-features">
+            <div class="feature-item"><span>100% состав</span></div>
+            <div class="feature-item"><span>Пробиотики</span></div>
+            <div class="feature-item"><span>Без сахара</span></div>
