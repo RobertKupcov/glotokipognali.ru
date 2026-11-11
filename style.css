@@ -152,6 +152,17 @@ body {
   list-style: none;
   padding: 0;
 }
+/* --- КАРТИНКА В КАРТОЧКЕ: показываем бутылку целиком --- */
+.flavor-image-wrapper img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;       /* ничего не обрезаем */
+  background-color: #fdf3e7; /* фон в цвет сайта, скрывает поля по бокам */
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
 
 .contacts a {
   color: var(--text-dark);
