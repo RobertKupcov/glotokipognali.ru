@@ -1,6 +1,6 @@
 /* --- БАЗОВЫЕ НАСТРОЙКИ --- */
 :root {
-  --primary-bg: #FFF8F0; /* Бежевый фон */
+  --primary-bg: #FFF8F0;
   --text-dark: #1A1A1A;
   --btn-orange: #FF8C00;
   --btn-hover: #E67E00;
@@ -15,7 +15,7 @@ body {
   line-height: 1.6;
 }
 
-/* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
+/* --- ГЛАВНЫЙ ЭКРАН --- */
 .hero {
   text-align: center;
   padding: 100px 20px;
@@ -27,7 +27,11 @@ body {
   letter-spacing: 2px;
 }
 
-.hero p {
+.hero .dot {
+  color: var(--btn-orange);
+}
+
+.hero .tagline {
   font-size: 18px;
   color: #555;
   margin-bottom: 30px;
@@ -48,17 +52,16 @@ body {
   background-color: var(--btn-hover);
 }
 
-/* --- СЕКЦИЯ ВКУСОВ --- */
+/* --- СЕКЦИИ --- */
 .section-title {
   text-align: center;
   font-size: 32px;
-  margin-bottom: 40px;
-  text-transform: uppercase;
+  margin: 40px auto 30px auto;
 }
 
+/* --- СЕТКА ВКУСОВ --- */
 .flavors-grid {
   display: grid;
-  /* Адаптивная сетка: авто-заполнение, мин. ширина карточки 280px */
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
   max-width: 1200px;
@@ -71,12 +74,16 @@ body {
   background: white;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   display: flex;
-  flex-direction: column; /* По умолчанию на мобильных и для надежности */
+  flex-direction: column;
+  transition: transform 0.3s ease;
 }
 
-/* Блок с картинкой */
+.flavor-card:hover {
+  transform: translateY(-5px);
+}
+
 .flavor-image-wrapper {
   width: 100%;
   height: 300px;
@@ -86,49 +93,41 @@ body {
 .flavor-image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Картинка заполняет блок, не искажаясь */
+  object-fit: cover;
+  display: block;
 }
 
-/* Блок с информацией */
 .flavor-info {
   padding: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .flavor-info h3 {
   margin: 0 0 15px 0;
   font-size: 24px;
-  color: var(--text-dark);
 }
 
 .flavor-description {
   font-size: 14px;
   color: #666;
   margin-bottom: 20px;
+  flex-grow: 1;
 }
 
-/* Сетка характеристик (капля, лист, сердце) */
 .flavor-features {
   display: flex;
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .feature-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   font-size: 12px;
   color: #444;
-}
-
-.feature-item svg {
-  width: 24px;
-  height: 24px;
-  margin-bottom: 5px;
-  fill: var(--btn-orange);
 }
 
 .volume-badge {
@@ -138,37 +137,22 @@ body {
   font-weight: bold;
   font-size: 14px;
   color: #333;
+  align-self: center;
 }
 
-/* --- АДАПТИВНОСТЬ (САМОЕ ВАЖНОЕ ДЛЯ ТЕБЯ) --- */
-@media (min-width: 769px) {
-  /* На ПК и больших планшетах: картинка и текст в ряд */
-  .flavor-card {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .flavor-image-wrapper {
-    width: 40%; /* Картинка занимает 40% ширины */
-    height: auto;
-    min-height: 300px;
-  }
-
-  .flavor-info {
-    width: 60%;
-    text-align: left;
-    padding: 30px;
-  }
-  
-  .flavor-features {
-    justify-content: flex-start;
-    gap: 20px;
-  }
+/* --- О ПРОДУКТЕ И КОНТАКТЫ --- */
+.about, .contacts {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* Дополнительные улучшения для очень больших экранов */
-@media (min-width: 1200px) {
-  .flavors-grid {
-    padding: 0 40px;
-  }
+.contacts ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contacts a {
+  color: var(--text-dark);
 }
