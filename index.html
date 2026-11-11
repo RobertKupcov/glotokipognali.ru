@@ -1,21 +1,80 @@
-а<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ГЛОТОК — живая комбуча</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 420px;
+      position: relative;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 18px;
+      top: 10px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #aaa;
+      line-height: 1;
+    }
+
+    .modal-close:hover {
+      color: #000;
+    }
+
+    .modal input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .modal input:focus {
+      outline: none;
+      border-color: #d4a373;
+    }
+
+    .modal .order-btn {
+      margin-top: 16px;
+      border: none;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
 
-  <header class="hero">
-    <h1>ГЛОТОК<span class="dot">.</span></h1>
-    <p class="tagline">Живая комбуча — вкус и свежесть в каждом глотке</p>
-    <a href="#flavors" class="btn-primary">Смотреть вкусы</a>
-  </header>
-
   <section id="flavors">
     <h2 class="section-title">Наши вкусы</h2>
+
     <div class="flavors-grid">
 
       <article class="flavor-card">
@@ -31,7 +90,8 @@
             <div class="feature-item"><span>Без сахара</span></div>
           </div>
           <div class="volume-badge">0,5 л</div>
-        <button class="order-btn">Заказать 0,5 л</button>
+          <button class="order-btn" onclick="openModal('Яблоко')">Заказать 0,5 л</button>
+        </div>
       </article>
 
       <article class="flavor-card">
@@ -47,6 +107,7 @@
             <div class="feature-item"><span>Без сахара</span></div>
           </div>
           <div class="volume-badge">0,5 л</div>
+          <button class="order-btn" onclick="openModal('Мята, Огурец')">Заказать 0,5 л</button>
         </div>
       </article>
 
@@ -63,15 +124,16 @@
             <div class="feature-item"><span>Без сахара</span></div>
           </div>
           <div class="volume-badge">0,5 л</div>
+          <button class="order-btn" onclick="openModal('Персик, Розмарин')">Заказать 0,5 л</button>
         </div>
       </article>
 
       <article class="flavor-card">
         <div class="flavor-image-wrapper">
-          <img src="img/jiniper-pine.png" alt="Комбуча ГЛОТОК, вкус можжевельник и кедр">
+          <img src="img/jiniper-pine.png" alt="Комбуча ГЛОТОК, вкус можжевельник, кедровый орех и розмарин">
         </div>
         <div class="flavor-info">
-          <h3>Можжевельник, Кедр, Розмарин</h3>
+          <h3>Можжевельник, Кедровый орех, Розмарин</h3>
           <p class="flavor-description">Лесной, глубокий вкус с хвойными и ореховыми оттенками.</p>
           <div class="flavor-features">
             <div class="feature-item"><span>100% состав</span></div>
@@ -79,6 +141,7 @@
             <div class="feature-item"><span>Без сахара</span></div>
           </div>
           <div class="volume-badge">0,5 л</div>
+          <button class="order-btn" onclick="openModal('Можжевельник, Кедровый орех, Розмарин')">Заказать 0,5 л</button>
         </div>
       </article>
 
@@ -95,12 +158,13 @@
             <div class="feature-item"><span>Без сахара</span></div>
           </div>
           <div class="volume-badge">0,5 л</div>
+          <button class="order-btn" onclick="openModal('Вишня, Чабрец')">Заказать 0,5 л</button>
         </div>
       </article>
 
       <article class="flavor-card">
         <div class="flavor-image-wrapper">
-          <img src="img/citrus.png" alt="Комбуча ГЛОТОК, цитрусовый вкус">
+          <img src="img/citrus.png" alt="Комбуча ГЛОТОК, вкус цитрус">
         </div>
         <div class="flavor-info">
           <h3>Цитрус</h3>
@@ -111,6 +175,7 @@
             <div class="feature-item"><span>Без сахара</span></div>
           </div>
           <div class="volume-badge">0,5 л</div>
+          <button class="order-btn" onclick="openModal('Цитрус')">Заказать 0,5 л</button>
         </div>
       </article>
 
@@ -120,33 +185,64 @@
         </div>
         <div class="flavor-info">
           <h3>Имбирь, Лимон</h3>
-          <p class="flavor-description">Жгучая пряность имбиря в обрамлении цитрусовой свежести.</p>
+          <p class="flavor-description">Острая свежесть имбиря и цитрусовая кислинка лимона.</p>
           <div class="flavor-features">
             <div class="feature-item"><span>100% состав</span></div>
             <div class="feature-item"><span>Пробиотики</span></div>
             <div class="feature-item"><span>Без сахара</span></div>
           </div>
           <div class="volume-badge">0,5 л</div>
+          <button class="order-btn" onclick="openModal('Имбирь, Лимон')">Заказать 0,5 л</button>
         </div>
       </article>
 
     </div>
   </section>
 
-  <section class="about">
-    <h2 class="section-title">Почему живая?</h2>
-    <p>Мы ничего не рисуем. Мы кладём внутрь.<br>
-       Каждая бутылка — результат бережной ферментации на чайной культуре.
-       100% натуральный состав, полезные пробиотики, без добавленного сахара.</p>
-  </section>
-
-  <footer id="contacts" class="contacts">
-    <h2 class="section-title">Контакты</h2>
-    <ul>
-      <li>Телефон: <a href="tel:+79120502708">+7 (912) 0502708</a></li>
-      <li>Почта: <a href="glotokipognali@mail.ru">glotokipognali@mail.ru</a></li>
-    </ul>
+  <footer id="contacts" class="site-footer">
+    <div class="container">
+      <h3>ГЛОТОК — живая комбуча</h3>
+      <p>Натуральные напитки с пробиотиками. Без добавленного сахара.</p>
+      <div class="footer-links">
+        <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+        <a href="mailto:hello@glotok.ru">hello@glotok.ru</a>
+        <a href="https://t.me/Robert_Kupcov" target="_blank">Telegram</a>
+      </div>
+      <p class="copyright">© 2024 ГЛОТОК. Все права защищены.</p>
+    </div>
   </footer>
+
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <h2>Оформить заказ</h2>
+      <p id="modalFlavor">Комбуча «ГЛОТОК», 0,5 л</p>
+      <form action="https://formspree.io/f/mppdajlw" method="POST">
+        <input type="hidden" name="flavor" id="flavorInput" value="">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <button type="submit" class="order-btn">Отправить заказ</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal(flavor) {
+      document.getElementById('orderModal').style.display = 'block';
+      document.getElementById('modalFlavor').textContent = 'Комбуча «ГЛОТОК», вкус: ' + flavor + ', 0,5 л';
+      document.getElementById('flavorInput').value = flavor;
+    }
+
+    function closeModal() {
+      document.getElementById('orderModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      if (event.target === document.getElementById('orderModal')) {
+        closeModal();
+      }
+    }
+  </script>
 
 </body>
 </html>
