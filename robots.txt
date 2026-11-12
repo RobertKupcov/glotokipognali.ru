@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://robertkupcov.github.io/glotokipognali.ru/sitemap.xml
+Sitemap: https://glotokipognali.ru/sitemap.xml
+Host: glotokipognali.ru
